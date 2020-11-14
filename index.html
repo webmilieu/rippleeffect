@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="blue">
+    <link href="styles.css" rel="stylesheet">
+	  <!-- Bootstrap -->
+	<!-- CSS only -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- JS, Popper.js, and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	 
+	<script src="rippleeffectcustom.js"></script>
+	</head>
+  <body>
+	<div class="header_top">
+	  <div class="menu"><ul><a><i class="fa fa-home"></i></a><li><i class="fa fa-phone"></i></li><li><i class="fa fa-user"></i></li></ul></div>
+	  <div class="fluid_container" id="test"  style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRX46-8n62j69uLk0iEK588Zh9Uk1EZrf12DQ&usqp=CAU');"></div>
+	</div>
+	<div id="myamim">
+	</div>
+
+<script>
+/* Simple ripple effect */
+/*Important needed for effect */
+
+		  var p=document.getElementById("test");
+		  //touch event start
+		  var i=p.addEventListener("touchstart",function(e){
+		  //on touch blur image
+		  p.animate([{ filter: 'blur(2px)' }, 
+  { filter: 'blur(5px)' }
+], { 
+  // timing options
+  duration: 5000,
+});
+// calculate touch
+		var g= e.touches[0].clientX;
+		var h=e.touches[0].clientY;
+	var btn=document.createElement("label");
+	btn.className="mybutton";
+	btn.style.left=g-100+"px";
+	btn.style.top=h-100+"px";
+	p.appendChild(btn);
+	document.getElementsByClassName("mybutton").style.width=screen.width+"px";
+	});
+</script>
+  </body>
+</html>		
