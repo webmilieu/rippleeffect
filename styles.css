@@ -30,7 +30,7 @@ i{
   background-size:cover;
   background-repeat:no-repeat;
   text-align:center;
-  background-position:-100px 0;
+  height:100vh;
 }
 
 /* imaginary container css */
